@@ -60,10 +60,17 @@ Modify temperature and top_p for creative or serious outputs:
 
 ```ts
 // silly-mode
-temperature: 1.0;
+const sillyConfig = {
+  temperature: 1.0,
+  topP: 1.0
+};
 
 // serious-mode
-temperature: 0.5;
+const seriousConfig = {
+  temperature: 0.5,
+  topP: 0.9
+};
+
 ```
 
 ### ✅ Structured Output
@@ -91,7 +98,7 @@ Display response via `<WishCard />`.
 - Correct riddle answer resets counter to 3
 
 ```ts
-if (userAnswer === "m") {
+if (userAnswer === "m") { // "m" is the riddle answer in this example
   localStorage.setItem("wishes", "3");
 }
 ```
@@ -151,18 +158,3 @@ Inject into Gemini context as additional prompt input.
 - Animated genie avatar
 - Dark mode / theme support
 
----
-
-<!-- ## 🎬 Demo Flow
-
-1. Visit the genie page
-2. Type a creative wish
-3. View structured response
-4. Repeat until 3 wishes are used
-5. Solve riddle to unlock more wishes
-
----
-
-## 📜 License
-
-MIT License – use your wishes wisely. -->
